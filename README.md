@@ -29,7 +29,7 @@ analyze_traffic.sh is a Bash script designed to analyze network traffic from pac
     Download the Script: Clone or download the script from the repository:
 
 
-    git clone <https://github.com/ahmedhussein18102002/Network-Traffic-Analyzer.git>
+    git clone https://github.com/ahmedhussein18102002/Network-Traffic-Analyzer.git
 
 Make the Script Executable:
 

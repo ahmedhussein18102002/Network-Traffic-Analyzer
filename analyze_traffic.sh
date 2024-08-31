@@ -74,31 +74,27 @@ function main () {
         echo ""
         echo "Error: The file does not exist or not found ❌"
         exit 1
-        fi
-        echo ""
-        echo "Everything is well: ✅"
-        echo ""
-        Timer 
-        echo ""
-
-
-        # Extract total packet count
-        TOTAL_PACKETS=$(tshark -r "$PCAP_FILE" -T fields -e frame.number | wc -l)
-        # Extract unique list of protocols
-        PROTOCOL_LIST=$(tshark -r "$PCAP_FILE" -T fields -e _ws.col.Protocol | sort | uniq | tr '\n' ' ')
-        # Count packets per protocol
-        PACKETS_PER_PROTOCOL=$(tshark -r "$PCAP_FILE" -T fields -e _ws.col.Protocol | sort | uniq -c | sort -nr | awk '{printf "%s: %s\n", $2, $1}')
-
-        printHeaders
-        printLine
-        analyzePackets "$PCAP_FILE"
-        echo ""
-        echo ""
-        printLine
+    fi
+    echo ""
+    echo "Everything is well: ✅"
+    echo ""
+    Timer 
+    echo ""
+    # Extract total packet count
+    TOTAL_PACKETS=$(tshark -r "$PCAP_FILE" -T fields -e frame.number | wc -l)
+    # Extract unique list of protocols
+    PROTOCOL_LIST=$(tshark -r "$PCAP_FILE" -T fields -e _ws.col.Protocol | sort | uniq | tr '\n' ' ')
+    # Count packets per protocol
+    PACKETS_PER_PROTOCOL=$(tshark -r "$PCAP_FILE" -T fields -e _ws.col.Protocol | sort | uniq -c | sort -nr | awk '{printf "%s: %s\n", $2, $1}')
+    printHeaders
+    printLine
+    analyzePackets "$PCAP_FILE"
+    echo ""
+    echo ""
+    printLine
     # Print total packet count
     echo "Total packet count: $TOTAL_PACKETS"
     printLine
-
     # Print list of all protocols
     echo "List of all protocols: $PROTOCOL_LIST"
     printLine
@@ -117,9 +113,7 @@ function main () {
         echo "| No packet count per protocol found           |                      |"
         echo "----------------------------------------------------"
     fi
-
     echo ""
-
     echo -e " Analysis complete! \U1F3C1"
     echo -e " Check the summary above for details. \U1F50D"
     echo ""

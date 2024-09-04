@@ -42,6 +42,8 @@ bash
 
 Run the script by : ./analyze_traffic.sh
 
+## Screenshots
+![Alt text ](screenshots/one.png)
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.

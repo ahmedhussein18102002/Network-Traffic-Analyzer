@@ -44,6 +44,8 @@ Run the script by : ./analyze_traffic.sh
 
 ## Screenshots
 ![Alt text ](screenshots/one.png)
+![Alt text ](screenshots/two.png)
+![Alt text ](screenshots/three.png)
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
